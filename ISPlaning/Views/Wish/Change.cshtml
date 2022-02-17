@@ -1,0 +1,29 @@
+﻿@model ISPlaning.Models.Wish
+@{
+    ViewData["Title"] = "Змінити бажання";
+}
+
+<h1>Нове бажання</h1>
+
+<form method="post" asp-action="Change" asp-controller="Wish" asp-route-id="@Model.Id">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="mingbod-kupdate">
+
+        <div>
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" placeholder="Введіть назву бажання" class="gesotenal" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Description"></label><br />
+            <input asp-for="Description" placeholder="Введіть опис бажання" class="gesotenal" />
+            <span asp-validation-for="Description"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Зберегти зміни" class="gesotenal">
+        <a asp-controller="Wish" asp-action="Back">Назад</a>
+    </div>
+
+</form>
+

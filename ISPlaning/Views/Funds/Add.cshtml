@@ -1,0 +1,25 @@
+﻿@model ISPlaning.Models.Funds
+@{
+    ViewData["Title"] = "Додати кошти";
+}
+
+<h1>Нові кошти</h1>
+
+<form asp-action="Add" asp-controller="Funds" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="mingbod-kupdate">
+
+        <div>
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" placeholder="Введіть назву предмету" class="gesotenal" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Uah"></label><br />
+            <input asp-for="Uah" type="number" class="gesotenal" />
+            <span asp-validation-for="Uah"></span>
+        </div>
+    </div>
+    <input type="submit" value="Додати кошти">
+</form>
+

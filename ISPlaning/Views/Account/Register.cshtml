@@ -1,0 +1,37 @@
+﻿@model ISPlaning.Models.RegisterViewModel
+
+<h2>Реєстрація у інформаційній системі планування</h2>
+
+<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="mingbod-kupdate">
+            <div>
+                <label asp-for="Email">Введіть Email</label><br />
+                <input type="text" asp-for="Email" class="gesotenal" />
+                <span asp-validation-for="Email" />
+            </div>
+            <div>
+                <label asp-for="Password">Введіть пароль</label><br />
+                <input asp-for="Password" class="gesotenal" />
+                <span asp-validation-for="Password" />
+            </div>
+            <div>
+                <label asp-for="PasswordConfirm">Повторіть пароль</label><br />
+                <input asp-for="PasswordConfirm" class="gesotenal" />
+                <span asp-validation-for="PasswordConfirm" />
+            </div>
+        </div>
+
+        <div class="kocustom">
+            <input type="submit" value="Зареєструватись" class="kocustom-input" />
+        </div>
+
+        <div class="detumokab">
+            <div class="geteknos">Уже є аккаунт?</div>
+            <div class="geteknos">
+                <a asp-action="Login" asp-controller="Account" style="width:100%">Вхід</a>
+            </div>
+        </div>
+    </div>
+</form>

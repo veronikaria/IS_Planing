@@ -1,0 +1,28 @@
+﻿@model ISPlaning.Models.Chart
+@{
+    ViewBag.Title = "Добавити графік";
+}
+
+<h1>Новий графік</h1>
+
+<form asp-action="Add" asp-controller="Chart" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="mingbod-kupdate">
+
+        <div>
+            <p>
+                Виберіть дату: <input type="date" asp-for="@Model.Date" class="gesotenal">
+            </p>
+        </div>
+        <div>
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" placeholder="Введіть задачу" class="gesotenal" />
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <input type="submit" value="Додати">
+</form>
+
+
+
+

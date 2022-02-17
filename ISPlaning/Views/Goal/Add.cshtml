@@ -1,0 +1,46 @@
+﻿@model ISPlaning.Models.Goal
+@{
+    ViewBag.Title = "Додати ціль";
+}
+<h2>Нова ціль</h2>
+<form method="post" asp-controller="Goal" asp-action="Add">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="mingbod-kupdate">
+        <div>
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" placeholder="Введіть назву своєї цілі" class="gesotenal" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Priority"></label><br />
+            <input asp-for="Priority" class="gesotenal" />
+            <span asp-validation-for="Priority"></span>
+        </div>
+        <div>
+            <label asp-for="Reason"></label><br />
+            <input asp-for="Reason" placeholder="Опишіть причину досягання цілі" class="gesotenal" />
+            <span asp-validation-for="Reason"></span>
+        </div>
+        <div>
+            <label asp-for="Result"></label><br />
+            <input asp-for="Result" placeholder="Опишіть результат досягання цілі" class="gesotenal" />
+            <span asp-validation-for="Result"></span>
+        </div>
+        <div>
+            <label asp-for="Awards"></label><br />
+            <input asp-for="Awards" placeholder="Додайте нагороди" class="gesotenal" />
+            <span asp-validation-for="Awards"></span>
+        </div>
+        <div>
+            <label asp-for="State"></label><br />
+            <select asp-for="State" asp-items="Html.GetEnumSelectList<StateGoal>()" class="gesotenal">
+                <option selected="selected" value="">Оберіть стан цілі</option>
+            </select>
+            <span asp-validation-for="State"></span>
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Додати ціль" />
+    </div>
+</form>

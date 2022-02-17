@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ISPlaning.Models.Funds>
+@{
+    ViewData["Title"] = "Бажання";
+}
+
+<div>
+    <a class="btn btn-light" asp-area="" asp-controller="Funds" asp-action="Add">Додати</a>
+</div>
+
+<br />
+<h2>Список коштів:</h2>
+
+<div class="container">
+
+    <table class="table">
+        <tr>
+            <th scope="col"><a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">Назва</a></th>
+            <th scope="col"><a asp-action="Index" asp-route-sortOrder="@ViewBag.MoneySort">Кошти</a></th>
+            <th scope="col"></th>
+        </tr>
+        @foreach (Funds fund in Model)
+        {
+            <tr>
+                <td>@fund.Name</td>
+                <td>@fund.Uah</td>
+                <td>
+                    <span class="btns">
+                        <a asp-controller="Funds" asp-action="Details" asp-route-id="@fund.Id">Детальніше</a>
+                        <a asp-controller="Funds" asp-action="Change" asp-route-id="@fund.Id">Змінити</a>
+                        <a asp-controller="Funds" asp-action="Delete" asp-route-id="@fund.Id">Видалити</a>
+                    </span>
+                </td>
+            </tr>
+
+        }
+    </table>
+
+</div>
+
+
+
+
+

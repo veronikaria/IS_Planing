@@ -1,0 +1,35 @@
+﻿@model ISPlaning.Models.LoginViewModel
+
+<h2>Вхід у інформаційну систему планування</h2>
+
+
+<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="mingbod-kupdate">
+            <div class="form-group">
+                <label asp-for="Email">Введіть Email</label>
+                <input type="text" asp-for="Email" class="gesotenal" />
+                <span asp-validation-for="Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Введіть пароль</label>
+                <input asp-for="Password" class="gesotenal" />
+                <span asp-validation-for="Password" />
+            </div>
+        </div>
+        <div>
+            <label asp-for="RememberMe"></label><br />
+            <input asp-for="RememberMe" />
+        </div>
+        <div class="form-group kocustom">
+            <input type="submit" value="Вхід" class="kocustom-input" />
+        </div>
+        <div class="detumokab">
+            <div class="geteknos">Ще не зареєстровані?</div>
+            <div class="geteknos">
+                <a asp-action="Register" asp-controller="Account" style="width:100%">Реєстрація</a>
+            </div>
+        </div>
+    </div>
+</form>

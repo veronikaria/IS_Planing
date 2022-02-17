@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ISPlaning.Models.Wish>
+@{
+    ViewData["Title"] = "Бажання";
+}
+
+<div>
+    <a class="btn btn-light" asp-area="" asp-controller="Wish" asp-action="Add">Додати</a>
+</div>
+
+<br />
+<h2>Список бажань:</h2>
+<div class="container">
+    <ol class="rounded">
+
+        @foreach (Wish wish in Model)
+        {
+            <li>
+                <div>
+                    <span>Назва: @wish.Name</span><br>
+                    <span>Опис: @wish.Description</span>
+                    <span class="btns">
+                        <a asp-controller="Wish" asp-action="Details" asp-route-id="@wish.Id">Детальніше</a>
+                        <a asp-controller="Wish" asp-action="Change" asp-route-id="@wish.Id">Змінити</a>
+                        <a asp-controller="Wish" asp-action="Delete" asp-route-id="@wish.Id">Видалити</a>
+                    </span>
+                </div>
+            </li>
+        }
+    </ol>
+
+</div>
+
+
+
+
+
+
+
+
+
+

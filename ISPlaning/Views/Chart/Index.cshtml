@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ISPlaning.Models.Chart>
+
+    <div>
+        <a class="btn btn-light" asp-area="" asp-controller="Chart" asp-action="Add">Додати</a>
+    </div>
+
+    <br />
+    <h2>Список графіків:</h2>
+
+    <div class="container">
+
+        <table class="table">
+            <tr>
+                <th scope="col">
+                    <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">
+                        Назва
+                    </a>
+                </th>
+                <th scope="col">
+                    <a asp-action="Index" asp-route-sortOrder="@ViewBag.DateSort">
+                        Дата
+                    </a>
+                </th>
+            </tr>
+            @foreach (Chart chart in Model)
+            {
+                <tr>
+                    <td>@chart.Name</td>
+                    <td>@chart.Date</td>
+                </tr>
+            }
+        </table>
+
+
+    </div>
+
+
+
+
+
+
